@@ -1,0 +1,167 @@
+<h2 class="lead card-pf-title" translatable="yes">Kafka Data Stream</h2>
+<div class="container-fluid container-cards-pf">
+    <div class="row" style="width: 100%">
+        <div class="col-xs-6 col-sm-4 col-md-4">
+            <div class="card-pf card-pf-accented card-pf-aggregate-status">
+                <h2 class="card-pf-title">
+    <span class="fa fa-shield"></span><span class="card-pf-aggregate-status-count">0</span> Number Of Topics
+  </h2>
+                <div class="card-pf-body">
+                    <p class="card-pf-aggregate-status-notifications">
+                        <span class="card-pf-aggregate-status-notification"><div class="add" data-toggle="tooltip" data-placement="top" title="Add Ipsum"><span class="pficon pficon-add-circle-o"  data-toggle="modal" data-target="#addSchema"></span></div>
+                </span>
+                </p>
+            </div>
+        </div>
+
+    </div>
+    <div class="col-xs-6 col-sm-4 col-md-4">
+        <div class="card-pf card-pf-accented card-pf-aggregate-status">
+            <h2 class="card-pf-title">
+    <a href="#"><span class="fa fa-shield"></span><span class="card-pf-aggregate-status-count">20</span> Number Of Messages Consumed</a>
+  </h2>
+            <div class="card-pf-body">
+                <p class="card-pf-aggregate-status-notifications">
+                    <span class="card-pf-aggregate-status-notification"><a href="#"><span class="pficon pficon-error-circle-o"></span>4</a>
+                    </span>
+                    <span class="card-pf-aggregate-status-notification"><a href="#"><span class="pficon pficon-warning-triangle-o"></span>1</a>
+                    </span>
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="col-xs-6 col-sm-4 col-md-4">
+        <div class="card-pf card-pf-accented card-pf-aggregate-status">
+            <h2 class="card-pf-title">
+    <a href="#"><span class="fa fa-shield"></span><span class="card-pf-aggregate-status-count">August 11, 2016 10:20AM</span>  Timestamp Of Last Consumption</a>
+  </h2>
+            <div class="card-pf-body">
+                <p class="card-pf-aggregate-status-notifications">
+                    <span class="card-pf-aggregate-status-notification"><span class="pficon pficon-ok"></span></span>
+                </p>
+            </div>
+        </div>
+
+    </div>
+</div>
+<!-- /row -->
+</div>
+<!-- /container -->
+<script src="/bower_components/matchHeight/dist/jquery.matchHeight-min.js"></script>
+<script>
+    $(function() {
+        // matchHeight the contents of each .card-pf and then the .card-pf itself
+        $(".row-cards-pf > [class*='col'] > .card-pf .card-pf-title").matchHeight();
+        $(".row-cards-pf > [class*='col'] > .card-pf > .card-pf-body").matchHeight();
+        $(".row-cards-pf > [class*='col'] > .card-pf > .card-pf-footer").matchHeight();
+        $(".row-cards-pf > [class*='col'] > .card-pf").matchHeight();
+        // initialize tooltips
+        $('[data-toggle="tooltip"]').tooltip();
+    });
+</script>
+<!-- DATATABLE-->
+<div class="card-pf-heading">
+    <div class=" ">
+        <select class="selectpicker">
+            <option>hadoopbroker1:9092</option>
+            <option>hadoopbroker2:9092</option>
+            <option>hadoopbroker3:9092</option>
+        </select>
+    </div>
+    <h2 class="card-pf-title" translatable="yes">Kafka Message Broker</h2>
+</div>
+<div class="card-pf-body" style="padding:20px;">
+    <table listing-table class="table table-condensed">
+        <thead>
+            <tr>
+                <th>Topic</th>
+                <th>
+                    Number of Messages
+                </th>
+                <th>
+                    Number Of Consumed
+                </th>
+                <th>
+                    View Messages
+                </th>
+                <th>
+                    Purge Messages
+                </th>
+                <th>
+                    Delete Topic
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="listing-ct-item">
+                <td class="listing-ct-toggle">
+                    foo.bar
+                </td>
+                <td>
+                    10
+                </td>
+
+                <td>
+                    5
+                </td>
+                <td>
+                    <button class="btn btn-primary" id="viewButton">View Messages</button>
+                </td>
+                <td>
+                    <button class="btn btn-primary" id="editButton">Purge Messages </button>
+                </td>
+                <td>
+                    <button class="btn btn-primary" id="deleteButton">Delete Topic</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+</div>
+</div>
+<div class="modal fade" id="addTopic" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Add Topic</h4>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" for="textInput-markup">Name</label>
+                    <div class="col-sm-10">
+                        <input type="text" id="textInput-markup" class="form-control">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" for="textInput-markup">Namespace</label>
+                    <div class="col-sm-10">
+                        <input type="text" id="textInput-markup" class="form-control">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" for="textInput-markup">Doc</label>
+                    <div class="col-sm-10">
+                        <input type="text" id="textInput-markup" class="form-control">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" for="textInput-markup">Type</label>
+                    <div class="col-sm-10">
+                        <input type="text" id="textInput-markup" class="form-control">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" for="textInput-markup">Fields</label>
+                    <div class="col-sm-10">
+                        <input type="text" id="textInput-markup" class="form-control">
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
