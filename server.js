@@ -8,11 +8,11 @@ var app_web_debug = process.env.OPENSHIFT_APP_WEB_DEBUG || false;
 
 app.configure(function() {
     app.use(express.logger());
-    app.set('views', __dirname + '/app');
+    app.set('views', __dirname + '/');
     app.use(express.bodyParser());
     app.use(express.methodOverride());
-    app.use(express.static(__dirname + '/app'));
-    app.use('/bower_components',  express.static(__dirname + '/app/bower_components'));
+    app.use(express.static(__dirname + '/'));
+    app.use('/bower_components',  express.static(__dirname + '/bower_components'));
     app.use(app.router);
     app.engine('html', require('ejs').renderFile);
 });
@@ -21,25 +21,25 @@ app.configure(function() {
 /*
 GET ALL SCHEAM's
 */
-app.get('/', function(req, res) {
+app.get('/api/', function(req, res) {
       res.send('SCHEMA_PLACEHOLDER');
 });
 
 /*
 GET SCHEMA BY ID
 */
-app.get('/schema/:id', function(req, res) {
+app.get('/api/schema/:id', function(req, res) {
       res.send('SCHEMA_PLACEHOLDER');
 });
 
 /*
 DELETE SCHEMA BY ID
 */
-app.delete('/:id', function(req, res) {
+app.delete('/api/schema/:id', function(req, res) {
       res.send('SCHEMA_PLACEHOLDER');
 });
 
-app.post('/', function(req, res) {
+app.post('/api/schema', function(req, res) {
       res.send('SCHEMA_PLACEHOLDER');
 });
 
