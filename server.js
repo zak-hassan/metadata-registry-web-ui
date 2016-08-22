@@ -4,9 +4,9 @@ var app = express();
 var app_rest_location = process.env.OPENSHIFT_APP_REST || '10.16.40.63';
 var app_rest_port = process.env.OPENSHIFT_APP_REST_PORT || '80';
 var app_web_debug = process.env.OPENSHIFT_APP_WEB_DEBUG || false;
+var metadata_registry_api = process.env.METAREGISTRY_SERVICE_HOST +":18080"
 
-
-app.configure(function() {
+ app.configure(function() {
     app.use(express.logger());
     app.set('views', __dirname + '/');
     app.use(express.bodyParser());
@@ -22,6 +22,7 @@ app.configure(function() {
 GET ALL SCHEAM's
 */
 app.get('/api/', function(req, res) {
+
       res.send('SCHEMA_PLACEHOLDER');
 });
 
