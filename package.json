@@ -5,7 +5,9 @@
     "bower": "^1.7.9",
     "ejs": "^2.4.1",
     "express": "^3.4.8",
-    "grunt-cli": "~0.1.13"
+    "grunt-cli": "~0.1.13",
+    "request": "^2.74.0",
+    "request-promise": "^4.1.1"
   },
   "devDependencies": {
     "autoprefixer-core": "^5.2.1",
