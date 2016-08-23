@@ -33,7 +33,7 @@ app.get('/api/schema', function(req, res) {
                 'Accept': 'application/json',
                 'Content-Type':'application/json'
         },
-        json: true 
+        json: true
     };
 
         promise(options)
@@ -50,18 +50,80 @@ app.get('/api/schema', function(req, res) {
 GET SCHEMA BY ID
 */
 app.get('/api/schema/:id', function(req, res) {
-      res.send('SCHEMA_PLACEHOLDER');
+      var options = {
+          method: 'GET',
+          uri: metadata_registry_api + '/api/schema'+'/'+request.params.id,
+          headers: {
+                  'User-Agent': 'Kubernetes-Microservice-FrontEnd',
+                  'Accept': 'application/json',
+                  'Content-Type':'application/json'
+          },
+          json: true
+      };
+
+          promise(options)
+          .then(function(json){
+              console.log(json);
+              res.send(json);
+          }).catch(function(err){
+              console.log(err);
+              res.send(err);
+          });
+
 });
 
 /*
 DELETE SCHEMA BY ID
 */
 app.delete('/api/schema/:id', function(req, res) {
-      res.send('SCHEMA_PLACEHOLDER');
+
+  var options = {
+      method: 'DELETE',
+      uri: metadata_registry_api + '/api/schema'+'/'+request.params.id,
+      headers: {
+              'User-Agent': 'Kubernetes-Microservice-FrontEnd',
+              'Accept': 'application/json',
+              'Content-Type':'application/json'
+      },
+      json: true
+  };
+
+      promise(options)
+      .then(function(json){
+          console.log(json);
+          res.send(json);
+      }).catch(function(err){
+          console.log(err);
+          res.send(err);
+      });
+
 });
 
 app.post('/api/schema', function(req, res) {
-      res.send('SCHEMA_PLACEHOLDER');
+  var options = {
+      method: 'POST',
+      uri: metadata_registry_api + '/api/schema',
+      headers: {
+              'User-Agent': 'Kubernetes-Microservice-FrontEnd',
+              'Accept': 'application/json',
+              'Content-Type':'application/json'
+      },
+      body: {
+
+
+      }
+  };
+
+      promise(options)
+      .then(function(json){
+          console.log(json);
+          res.send(json);
+      }).catch(function(err){
+          console.log(err);
+          res.send(err);
+      });
+
+
 });
 
 var port = process.env.OPENSHIFT_NODEJS_PORT || 8080;
