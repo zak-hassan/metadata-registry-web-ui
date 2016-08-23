@@ -11,7 +11,10 @@ To run the ui using s2i then run:
 Required Environment Variables:
 
 ```
+OPENSHIFT_APP_REST
+OPENSHIFT_APP_REST_PORT
+OPENSHIFT_APP_WEB_DEBUG
 
-METAREGISTRY_SERVICE_HOST
+Note: In kubernetes environment you would get this env variable set: 'METAREGISTRY_SERVICE_HOST'
 
 ```
