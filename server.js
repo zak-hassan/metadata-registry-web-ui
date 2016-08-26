@@ -67,6 +67,10 @@ app.get('/api/schema/:id', function(req, res) {
             res.send(json);
         }).catch(function(err) {
             console.log(err);
+            if(err.statusCode== 400) {
+                // By default it sends way too much information to the ui.
+                res.status(400).send({error:"Resource Not Found"})
+            }
             res.send(err);
         });
 

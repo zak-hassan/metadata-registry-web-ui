@@ -13,6 +13,16 @@ config(['$locationProvider', '$routeProvider', function($locationProvider, $rout
 
   $routeProvider.otherwise({redirectTo: '/metaregistry'});
 }]).controller('NavCtrl', function($rootScope, $scope, $location) {
+  //
+   $scope.navtitle='Metadata Registry';
+   $scope.logout='Log out';
+  // Defining nav items
+  $scope.metadata={ name :'Meta Registry',
+                    link :'#!/metadata'};
+  $scope.metasearch={ name :'Schema Search',
+                      link :'#!/metasearch'};
+  $scope.metastream={ name :'Data Stream',
+                      link :'#!/metadatastream'};
     $scope.isActive = function(route) {
         $scope.path = $location.path();
         return $location.path() === route;
